@@ -35,7 +35,13 @@
   @import 'bootstrap-icons/font/bootstrap-icons'; 
 
 .jumbotron {
-  background-image: url('banddeau gossip.jpg');
+  background-image: url('istockphoto-1371325616-612x612.jpg');
   background-size: cover; /* Ajuste la taille de l'image pour remplir le conteneur */
   color: #000000; /* Couleur du texte pour le contraste */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  filter: blur(5px);
+  overflow: hidden;
+  height: 400px; /* Adjust the height as needed
   }

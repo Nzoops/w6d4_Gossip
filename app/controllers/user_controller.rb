@@ -1,5 +1,5 @@
 class UserController < ApplicationController
-
+  
   def new
     @user = User.new
   end
@@ -8,8 +8,10 @@ class UserController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
+      flash[:success] = "User Created!" #pour afficher le bandeau alerte (Voir html new)
       redirect_to root_path
     else
+      flash[:failure] = "Nope"
       render :new
     end
   end
@@ -21,6 +23,6 @@ class UserController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password_digest)
+    params.require(:user).permit(:email, :password, :first_name, :last_name, :age)
   end
 end
